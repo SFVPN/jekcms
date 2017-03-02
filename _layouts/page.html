@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+
+    https://github.com/{{site.github_username}}/{{site.github_repo}}/edit/{{site.github_branch}}/{{ page.path }}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>

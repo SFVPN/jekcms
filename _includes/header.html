@@ -1,0 +1,43 @@
+<header class="site-header" role="banner">
+  <ul id="dropdown1" class="dropdown-content">
+    {% for my_work in site.work %}
+      {% if my_work.title %}
+      <li>
+        <a class="page-link" href="{{ my_work.url | relative_url }}">{{ my_work.title | escape }}</a>
+      </li>
+      {% endif %}
+    {% endfor %}
+</ul>
+
+<div class="navbar-fixed">
+  <nav>
+   <div class="nav-wrapper container">
+     <a href="{{ site.url }}" class="brand-logo thin">{{ site.title | escape }}</a>
+     <ul id="nav-mobile" class="right hide-on-med-and-down">
+       {% for my_page in site.pages %}
+{% if my_page.title %}
+
+{% if my_page.title == page.title  %}
+
+<li>
+  <a class="page-link active" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+</li>
+{% else %}
+<li>
+  <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+</li>
+{% endif %}
+
+{% endif %}
+{% endfor %}
+
+
+
+       <li><a class="dropdown-button" href="#!" data-constrainwidth="false" data-beloworigin="true" data-activates="dropdown1">Work</a></li>
+    
+
+     </ul>
+   </div>
+ </nav>
+</div>
+</header>

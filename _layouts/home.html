@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Work</h1>
+
+  {{ content }}
+
+  <div class="slider">
+    {% for item in page.slides %}
+      <div style="background: url({{ site.url }}/assets/images/{{ item.image}}) no-repeat; background-size: cover"><label class="white">{{ item.caption }}</label></div>
+
+    {% endfor %}
+  </div>
+
+
+  {% for page in site.pages %}
+
+      {% if page.featuredPage %}
+      <div class="col s6"><h4><a href="{{ page.url }}">{{ page.title }}</a></h4></div>
+      {% endif %}
+
+    {% endfor %}
+
+
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
