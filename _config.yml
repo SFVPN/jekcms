@@ -23,7 +23,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dementiamap
 github_username:  alastair38
-github_repo: jekfor
+github_repo: jekcms
 github_branch: master
 
 # Build settings
