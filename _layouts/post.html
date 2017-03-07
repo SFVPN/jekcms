@@ -15,11 +15,11 @@ layout: default
   <input name="options[origin]" type="hidden" value="http://localhost:4000/">
   <!-- e.g. "2016-01-02-this-is-a-post" -->
   <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-  <label><input name="fields[name]" type="text">Name</label>
-  <label><input name="fields[email]" type="email">E-mail</label>
-  <label><textarea name="fields[message]"></textarea>Message</label>
+  <label><input name="fields[title]" type="text">Title</label>
+  <label><input name="fields[contractor]" type="text">Contractor</label>
+  <label><textarea name="fields[description]"></textarea>Description</label>
 
-  <button type="submit">Go!</button>
+  <button class="btn" type="submit">Go!</button>
 </form>
 
 <div class="PageNavigation">
