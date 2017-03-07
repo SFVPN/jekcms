@@ -9,18 +9,39 @@ layout: default
       {{content}}
 </article>
 
-<form method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
 
-  <input name="options[redirect]" type="hidden" value="http://localhost:4000/">
-  <input name="options[origin]" type="hidden" value="http://localhost:4000/">
-  <!-- e.g. "2016-01-02-this-is-a-post" -->
-  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-  <label><input name="fields[title]" type="text">Title</label>
-  <label><input name="fields[contractor]" type="text">Contractor</label>
-  <label><textarea name="fields[description]"></textarea>Description</label>
 
-  <button class="btn" type="submit">Go!</button>
-</form>
+<div class="row">
+  <form class="col s12" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
+    <input name="options[redirect]" type="hidden" value="http://localhost:4000/">
+    <input name="options[origin]" type="hidden" value="http://localhost:4000/">
+    <!-- e.g. "2016-01-02-this-is-a-post" -->
+    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+
+     <div class="row">
+  <div class="input-field col s12">
+    <input placeholder="Placeholder" name="fields[title]" id="title" type="text" class="validate">
+    <label for="title">Title</label>
+  </div>
+</div>
+<div class="row">
+<div class="input-field col s12">
+<input placeholder="Placeholder" name="fields[contractor]" id="contractor" type="text" class="validate">
+<label for="contractor">Contractor</label>
+</div>
+</div>
+
+     <div class="row">
+       <div class="input-field col s12">
+         <textarea id="description" name="fields[description]" class="materialize-textarea"></textarea>
+         <label for="description">Description</label>
+       </div>
+     </div>
+     <button class="btn" type="submit">Submit Content</button>
+
+   </form>
+ </div>
+
 
 <div class="PageNavigation">
 {% if page.previous.url %}
