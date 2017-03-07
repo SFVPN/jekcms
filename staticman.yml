@@ -35,7 +35,7 @@ comments:
   format: "frontmatter"
 
   transforms:
-    message: "frontmatterContent"
+    yourContentField: "message"
     email: md5
 
 
