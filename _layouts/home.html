@@ -19,7 +19,7 @@ layout: default
   {% for page in site.pages %}
 
       {% if page.featuredPage %}
-      <div class="col s6"><h4><a href="{{ page.url }}">{{ page.title }}</a></h4></div>
+      <div class="col s6"><h4><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h4></div>
       {% endif %}
 
     {% endfor %}
