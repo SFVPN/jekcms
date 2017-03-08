@@ -13,7 +13,7 @@ layout: default
 
 
 <div class="row">
-  <form class="col s12" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
+  <form class="col s12 form" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
     <input name="options[redirect]" type="hidden" value="http://localhost:4000/">
     <input name="options[origin]" type="hidden" value="http://localhost:4000/">
     <input name="fields[verify]" type="hidden">
@@ -27,13 +27,13 @@ layout: default
 </div>
 <div class="row">
 <div class="input-field col s12">
-<input placeholder="Your name" name="fields[person]" id="person" type="text" class="validate">
+<input placeholder="Your name" name="fields[person]" id="person" type="text" class="validate" required>
 <label for="person">Your Name</label>
 </div>
 </div>
 <div class="row">
 <div class="input-field col s12">
-<input placeholder="email@emailaddress.com" name="fields[email]" id="email" type="email" class="validate">
+<input placeholder="email@emailaddress.com" name="fields[email]" id="email" type="text" class="validate" data-error="wrong" data-success="right">
 <label for="email">Email</label>
 </div>
 </div>
@@ -46,7 +46,15 @@ layout: default
          <label for="description">Description</label>
        </div>
      </div>
-     <button onclick="myFunction()" class="btn" type="submit">Submit Content</button>
+     <div class="row">
+       <p class="col s12">
+        <input type="checkbox" id="ready" />
+        <label for="ready">All fields completed?</label>
+      </p>
+
+     </div>
+
+     <button onclick="myFunction()" id="submitted" class="btn disabled" type="submit">Submit Content</button>
 
    </form>
  </div>
@@ -57,4 +65,20 @@ layout: default
        Materialize.toast('Thankyou for you submission', 4000);
 
  }
+
+
+
+   $(document).ready(function(){
+       $('input[type="checkbox"]').click(function(){
+           if($(this).prop("checked") == true){
+             $( "#submitted" ).removeClass( "disabled" );
+
+           }
+           else if($(this).prop("checked") == false){
+             $( "#submitted" ).addClass( "disabled" );
+           }
+       });
+   });
+
+
  </script>
