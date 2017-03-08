@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+<p>
+  Please submit your content for the Digital Families Research Network by filling out the form below. All fields are required. Upon submission, the content will be sent for approval before being published.
+</p>
+
+
+<div class="row">
+  <form class="col s12" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
+    <input name="options[redirect]" type="hidden" value="http://localhost:4000/">
+    <input name="options[origin]" type="hidden" value="http://localhost:4000/">
+    <input name="fields[verify]" type="hidden">
+    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+
+     <div class="row">
+  <div class="input-field col s12">
+    <input placeholder="Title of your content" name="fields[title]" id="title" type="text" class="validate">
+    <label for="title">Title</label>
+  </div>
+</div>
+<div class="row">
+<div class="input-field col s12">
+<input placeholder="Your name" name="fields[person]" id="person" type="text" class="validate">
+<label for="person">Your Name</label>
+</div>
+</div>
+<div class="row">
+<div class="input-field col s12">
+<input placeholder="email@emailaddress.com" name="fields[email]" id="email" type="email" class="validate">
+<label for="email">Email</label>
+</div>
+</div>
+
+
+
+     <div class="row">
+       <div class="input-field col s12">
+         <textarea id="description" name="fields[description]" class="materialize-textarea"></textarea>
+         <label for="description">Description</label>
+       </div>
+     </div>
+     <button onclick="myFunction()" class="btn" type="submit">Submit Content</button>
+
+   </form>
+ </div>
+</article>
+ <script>
+ function myFunction() {
+
+       Materialize.toast('Thankyou for you submission', 4000);
+
+ }
+ </script>
