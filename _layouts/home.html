@@ -8,13 +8,6 @@ layout: default
 
   {{ content }}
 
-  <div class="slider">
-    {% for item in page.slides %}
-      <div style="background: url({{ site.url }}/assets/images/{{ item.image}}) no-repeat; background-size: cover"><label class="white">{{ item.caption }}</label></div>
-
-    {% endfor %}
-  </div>
-
 
   {% for page in site.pages %}
 

@@ -13,7 +13,7 @@ layout: default
 
 
 <div class="row">
-  <form class="col s12 form" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/comments">
+  <form class="col s12 form" method="POST" action="https://api.staticman.net/v2/entry/alastair38/jekcms/master/{{page.collection}}">
     <input name="options[redirect]" type="hidden" value="https://alastair38.github.io/jekcms/">
     <input name="options[origin]" type="hidden" value="https://alastair38.github.io/jekcms/">
     <input name="fields[verify]" type="hidden">
@@ -21,20 +21,26 @@ layout: default
 
      <div class="row">
   <div class="input-field col s12">
-    <input placeholder="Title of your content" name="fields[title]" id="title" type="text" class="validate">
-    <label for="title">Title</label>
+    <i class="material-icons prefix">mode_edit</i>
+
+    <input name="fields[title]" id="title" type="text" class="validate" required>
+    <label for="title">Title of submission</label>
   </div>
 </div>
 <div class="row">
 <div class="input-field col s12">
-<input placeholder="Your name" name="fields[person]" id="person" type="text" class="validate" required>
-<label for="person">Your Name</label>
+  <i class="material-icons prefix">account_circle</i>
+
+<input name="fields[person]" id="person" type="text" class="validate" required>
+<label for="person">Your name</label>
 </div>
 </div>
 <div class="row">
 <div class="input-field col s12">
-<input placeholder="email@emailaddress.com" name="fields[email]" id="email" type="text" class="validate" data-error="wrong" data-success="right">
-<label for="email">Email</label>
+  <i class="material-icons prefix">email</i>
+
+<input name="fields[email]" id="email" type="email" class="validate" required>
+<label for="email">Your email</label>
 </div>
 </div>
 
@@ -42,7 +48,7 @@ layout: default
 
      <div class="row">
        <p class="col s12">
-         <label for="description">Description</label>
+         <label for="description">Enter your content below</label>
        </p>
        <div class="input-field col s12">
 
@@ -63,22 +69,19 @@ layout: default
  </div>
 </article>
  <script>
- function myFunction() {
 
-       Materialize.toast('Thanks for you submission', 4000);
 
- }
-
- var simplemde = new SimpleMDE({
-    promptURLs: true,
-    autosave: {
-        enabled: true,
-        uniqueId: "submissionsPage",
-    },
-});
 
 
    $(document).ready(function(){
+     var simplemde = new SimpleMDE({
+        promptURLs: true,
+        autosave: {
+            enabled: true,
+            uniqueId: "submissionsPage",
+        },
+    });
+
        $('input[type="checkbox"]').click(function(){
            if($(this).prop("checked") == true){
              $( "#submitted" ).removeClass( "disabled" );
