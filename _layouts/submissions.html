@@ -41,9 +41,12 @@ layout: default
 
 
      <div class="row">
-       <div class="input-field col s12">
-         <textarea id="description" name="fields[description]" class="materialize-textarea"></textarea>
+       <p class="col s12">
          <label for="description">Description</label>
+       </p>
+       <div class="input-field col s12">
+
+         <textarea id="description" name="fields[description]" class="materialize-textarea"></textarea>
        </div>
      </div>
      <div class="row">
@@ -62,10 +65,17 @@ layout: default
  <script>
  function myFunction() {
 
-       Materialize.toast('Thankyou for you submission', 4000);
+       Materialize.toast('Thanks for you submission', 4000);
 
  }
 
+ var simplemde = new SimpleMDE({
+    promptURLs: true,
+    autosave: {
+        enabled: true,
+        uniqueId: "submissionsPage",
+    },
+});
 
 
    $(document).ready(function(){
